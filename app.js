@@ -24,8 +24,11 @@ var question3 = ["Question 3", "Has Jerry met Dumbledore?", "Y", "N"];
 var question4 = ["Question 4", "Is Aristotle Jerry's father?", "Y", "N"];
 var question5 = ["Question 5", "Did Jerry write the description for '10 Things I Hate About You' on Netflix?", "Y", "N"];
 
+confirm("You're about to answer some questions. Are you ready?");
+alert("Your enthusiasm is infectious.");
 ask(question1);
 ask(question2);
 ask(question3);
 ask(question4);
 ask(question5);
+alert("Whether you got 5 correct or 0, everyone's a winner here. See ya ~~.");
