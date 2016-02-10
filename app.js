@@ -5,8 +5,10 @@ function ask(question) {
   this.question = question;
   var answer = prompt(question[1]).toUpperCase();
   if (answer === question[2]) {
+      alert("Correct!");
       console.log(this.question[0] + ": " + "Answer: " + answer);
   } else if (answer === question[3]) {
+      alert("Sorry, incorrect.");
       console.log(this.question[0] + ": " + "Answer: " + answer);
   } else {
       alert("Please answer in Y/N format.");
