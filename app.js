@@ -4,13 +4,35 @@
 function ask(question) {
   this.question = question;
   var answer = prompt(question[1]).toUpperCase();
+  //Adding code for Question 6
   if (answer === question[2]) {
     alert('Correct!');
     console.log(this.question[0] + ': ' + 'Answer: ' + answer);
   } else if (answer === question[3]) {
     alert('Sorry, incorrect.');
     console.log(this.question[0] + ': ' + 'Answer: ' + answer);
-  } else {
+  } else if (question[0] === "Question 6") {
+    var counter = 0;
+    while (counter < 4) {
+      if (answer === question[2]) {
+        alert('That\'s right!');
+        console.log(this.question[0] + ': ' + 'Answer: ' + answer);
+        counter = 4;
+      } else if (answer > question[2]) {
+          alert('That\'s too high.');
+          counter++;
+          ask(this.question);
+        } else if (answer < question[2]) {
+          alert('That\'s too low.');
+          counter++;
+          ask(this.question);
+        } else {
+            if (answer === NaN) {
+            alert('Please enter a number');
+          }
+        }
+        }
+      } else {
     alert('Please answer in Y/N format.');
     console.log('Invalid response - Asking the question again');
     ask(this.question);
@@ -23,12 +45,19 @@ var question2 = ['Question 2', 'Is "Kanye West" one of Jerry\'s prior nicknames?
 var question3 = ['Question 3', 'Has Jerry met Dumbledore?', 'Y', 'N'];
 var question4 = ['Question 4', 'Is Aristotle Jerry\'s father?', 'Y', 'N'];
 var question5 = ['Question 5', 'Did Jerry write the description for "10 Things I Hate About You" on Netflix?', 'Y', 'N'];
+var question6 = ['Question 6', 'How many hours of sleep did Jerry get last night?', 8, 'NA'];
 
 confirm('You\'re about to answer some questions. Are you ready?');
 alert('Your enthusiasm is infectious.');
-ask(question1);
+/* ask(question1);
 ask(question2);
 ask(question3);
 ask(question4);
 ask(question5);
-alert('Whether you got 5 correct or 0, everyone\'s a winner here. See ya ~~.');
+ask(question6); */
+
+var arrayQuestions = [question1, question2, question3, question4, question5, question6];
+for (var i = 0; i < arrayQuestions.length; i++) {
+  ask(arrayQuestions[i]);
+}
+//alert('Whether you got 5 correct or 0, everyone\'s a winner here. See ya ~~.');
