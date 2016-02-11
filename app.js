@@ -15,20 +15,24 @@ function ask(question) {
     var counter = 0;
     while (counter < 4) {
       if (answer === question[2]) {
-        alert('That\'s right!');
         console.log(this.question[0] + ': ' + 'Answer: ' + answer);
+        alert('That\'s right!');
         counter = 4;
       } else if (answer > question[2]) {
           alert('That\'s too high.');
           counter++;
           ask(this.question);
-        } else if (answer < question[2]) {
+      } else if (answer < question[2]) {
           alert('That\'s too low.');
           counter++;
           ask(this.question);
-        } else {
+      } else if (counter === 4) {
+        alert('Sorry, you couldn\'t guess my sleep hours in 4 or less tries.');
+        break;
+      } else {
             if (answer === NaN) {
             alert('Please enter a number');
+            ask(this.question);
           }
         }
         }
@@ -46,6 +50,7 @@ var question3 = ['Question 3', 'Has Jerry met Dumbledore?', 'Y', 'N'];
 var question4 = ['Question 4', 'Is Aristotle Jerry\'s father?', 'Y', 'N'];
 var question5 = ['Question 5', 'Did Jerry write the description for "10 Things I Hate About You" on Netflix?', 'Y', 'N'];
 var question6 = ['Question 6', 'How many hours of sleep did Jerry get last night?', 8, 'NA'];
+var question7 = ['Question 7', 'What is one of Jerry\'s favorite colors?', ['BLUE', 'BLACK', 'TURQUOISE'], 'NA'];
 
 confirm('You\'re about to answer some questions. Are you ready?');
 alert('Your enthusiasm is infectious.');
