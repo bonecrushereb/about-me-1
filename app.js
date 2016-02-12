@@ -13,11 +13,11 @@ function ask(question) {
     console.log(this.question[0] + ': ' + 'Answer: ' + answer);
   } else if (question[0] === "Question 6") {
     var counter = 0;
-    while (counter < 4) {
+    while (counter < 5) {
       if (answer === question[2]) {
         console.log(this.question[0] + ': ' + 'Answer: ' + answer);
         alert('That\'s right!');
-        counter = 4;
+        break;
       } else if (answer > question[2]) {
           alert('That\'s too high.');
           counter++;
